@@ -22,10 +22,12 @@
 松弛的步骤可以降低最短路径的估算值v.d和更新v的前去属性π。
 
 松弛的伪代码：
+
 1.	RELAX( u, v, w ) 
 2.	If ( v.d > u.d + w(u, v)
 3.	   v.d = u.d + w(u,v)
 4.	   v.π= d
+	   
 该算法的运行时间为O（1）
 
 <h2>Bellman-Ford算法:</h2>
@@ -33,6 +35,7 @@
 经典的Bellman-Ford算法变可以实现这种单源最短问题。
 
 Bellman-Ford算法的伪代码：
+
 1.	Bellman-Ford(G,s,w)
 2.	INITIALIZE SINGLE SOURCE ( G,s)
 3.	For 1 to |G.V| - 1
@@ -42,6 +45,7 @@ Bellman-Ford算法的伪代码：
 7.	    If ( v.d > u.d + w(u,v) )
 8.	         Return false
 9.	Return ture
+
 该算法的第2行运行时间为O(|V|-1),而4到5行的运行时间为O（E），第6行的运行时间为O（E），所以该算法的总运算时间为O(VE)。
 
 <h2>代码中图的数据结构:</h2>
